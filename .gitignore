@@ -3,6 +3,5 @@
 *bin/
 *.classpath
 *.project
-src/
+/src
 proyects.iml
-
