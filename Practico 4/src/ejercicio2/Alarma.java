@@ -21,16 +21,12 @@ public class Alarma {
 	public boolean comprobar() {
 		for (int i = 0; i < sensores.size(); i++) {
 			if (sensores.get(i).isDetectado()) {
-				this.sonar();
+				this.timbre.hacerSonar();
+				System.out.println(this.sensores.get(i).getZona());
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public void sonar() {
-		if (this.comprobar()){
-			this.timbre.hacerSonar();
-		}
-	}
 }
