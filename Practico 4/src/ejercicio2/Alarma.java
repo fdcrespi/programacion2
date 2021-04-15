@@ -22,11 +22,20 @@ public class Alarma {
 		for (int i = 0; i < sensores.size(); i++) {
 			if (sensores.get(i).isDetectado()) {
 				this.timbre.hacerSonar();
-				System.out.println(this.sensores.get(i).getZona());
+				this.imprimirZonas();
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	public void imprimirZonas() {
+		System.out.println("Las zonas detectadas son: ");
+		for (int i = 0; i < sensores.size(); i++) {
+			if (sensores.get(i).isDetectado()) {
+				System.out.println(sensores.get(i).getZona());
+			}
+		}
 	}
 
 }
