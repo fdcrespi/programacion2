@@ -22,5 +22,11 @@ public class Fresco extends Producto {
 	public void setGranja(String granja) {
 		this.granja = granja;
 	}
+	
+	public Fresco(String nombre, LocalDate fechaVencimiento, int nroLote, LocalDate fechaEnvasado, String granja) {
+		super(nombre, fechaVencimiento, nroLote);
+		this.fechaEnvasado = fechaEnvasado;
+		this.granja = granja;
+	}
 
 }

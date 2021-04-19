@@ -31,5 +31,11 @@ public class Producto {
 	public void setNroLote(int nroLote) {
 		this.nroLote = nroLote;
 	}
+	
+	public Producto (String nombre, LocalDate vencimiento, int nroLote) {
+		this.nombre = nombre;
+		this.fechaVencimiento = vencimiento;
+		this.nroLote = nroLote;
+	}
 
 }
