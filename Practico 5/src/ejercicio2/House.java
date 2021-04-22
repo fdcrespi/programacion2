@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class House {
 	private String nameHouse;
 	private int maxStudents;
-	private ArrayList<Quality> qualities;
-	private ArrayList<Alumn> alumns;
+	private ArrayList<Quality> qualities = new ArrayList<Quality>();
+	private ArrayList<Alumn> alumns = new ArrayList<Alumn>();
 
 	public House(String nameHouse, int maxStudents) {
 		this.nameHouse = nameHouse;

@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class Stack {
 
-	ArrayList<Object> elements;
+	ArrayList<Object> elements = new ArrayList<Object>();
 
 	public Stack() {
 		elements = new ArrayList<Object>();
