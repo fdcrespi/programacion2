@@ -1,7 +1,6 @@
 package ejercicio3;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Cooperativa {
 
@@ -80,11 +79,7 @@ public class Cooperativa {
 	}
 	
 	private boolean contieneMinerales(Lote lote, Cereal cereal) {
-		for(int i = 0; i < cereal.getMinerales().size(); i++) {
-			if (!(lote.getMinerales().contains(cereal.getMinerales().get(i)))) {
-				return false;
-			}
-		} return true;
+		return lote.getMinerales().containsAll(cereal.getMinerales());
 	}
 	
 	public ArrayList<Lote> lotesParaCereal(Cereal cereal){
@@ -95,5 +90,13 @@ public class Cooperativa {
 			}
 		}
 		return lotesOk;
+	}
+	
+	public boolean lotePrimario(Lote lote) {
+		return lote.getMinerales().containsAll(mineralesPrimarios);
+	}
+	
+	public boolean loteSecundario(Lote lote) {
+		return !(lotePrimario(lote));
 	}
 }

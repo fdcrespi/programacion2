@@ -23,10 +23,6 @@ public class Cereal {
 		return minerales;
 	}
 
-	public void setMinerales(ArrayList<Mineral> minerales) {
-		this.minerales = minerales;
-	}
-	
 	public void addMineral(Mineral mineral) {
 		minerales.add(mineral);
 	}
