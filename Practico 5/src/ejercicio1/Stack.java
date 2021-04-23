@@ -1,11 +1,10 @@
 package ejercicio1;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Stack {
 
-	ArrayList<Object> elements = new ArrayList<Object>();
+	private ArrayList<Object> elements = new ArrayList<Object>();
 
 	public Stack() {
 		elements = new ArrayList<Object>();
@@ -65,6 +64,7 @@ public class Stack {
 	/**
 	 * @return copia de la pila invertida
 	 */
+	
 	public Stack reverse() {
 		Stack stackCopy = new Stack();
 		for (int i = size()-1; i >= 0; i--) {
@@ -72,5 +72,5 @@ public class Stack {
 		}
 		return stackCopy;
 	}
-		
+	
 }

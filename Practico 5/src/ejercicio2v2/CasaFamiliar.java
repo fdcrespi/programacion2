@@ -25,13 +25,12 @@ public class CasaFamiliar extends Casa{
 		boolean encontro = false;
 		int i = 0;
 		while (!(encontro) && i < alumno.getFamilia().size()) {
-			if (this.getAlumnos().contains(alumno.getFamilia().get(i))) {
+			if (getAlumnos().contains(alumno.getFamilia().get(i))) {
 				encontro = true;
 			}
 			i++;
 		}
 		return encontro;
 	}
-	
 	
 }

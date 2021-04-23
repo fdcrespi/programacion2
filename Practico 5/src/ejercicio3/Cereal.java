@@ -10,7 +10,7 @@ public class Cereal {
 	public Cereal(String name) {
 		this.name = name;
 	}
-
+	
 	public String getName() {
 		return name;
 	}

@@ -50,7 +50,7 @@ public class Casa {
 		return false;
 	}
 	
-	public boolean permiteAlumno(Alumno alumno) {
+	protected boolean permiteAlumno(Alumno alumno) {
 		return (maximoEstudiantes < alumnos.size() && cualidades.containsAll(alumno.getCualidades()));
 	}
 	
