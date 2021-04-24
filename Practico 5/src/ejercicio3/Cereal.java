@@ -5,10 +5,11 @@ import java.util.ArrayList;
 public class Cereal {
 
 	private String name;
-	private ArrayList<Mineral> minerales = new ArrayList<Mineral>();
-
+	private ArrayList<String> minerales;
+	
 	public Cereal(String name) {
 		this.name = name;
+		minerales = new ArrayList<String>();
 	}
 	
 	public String getName() {
@@ -19,12 +20,28 @@ public class Cereal {
 		this.name = name;
 	}
 
-	public ArrayList<Mineral> getMinerales() {
-		return minerales;
+	public void addMineral(String mineral) {
+		if (!(minerales.contains(mineral.toLowerCase()))) {
+			minerales.add(mineral.toLowerCase());
+		}
+	}
+	
+	public void removeMineral(String mineral) {
+		minerales.remove(mineral.toLowerCase());
+	}
+	
+	public boolean sirveParaLote(Lote lote) {
+		for (int i = 0; i < minerales.size(); i++) {
+			if(!(lote.contieneMineral(minerales.get(i).toLowerCase()))) {
+				return false;
+			}
+		}
+		return true;
 	}
 
-	public void addMineral(Mineral mineral) {
-		minerales.add(mineral);
+	public boolean contieneMineral(String mineral) {
+		// TODO Auto-generated method stub
+		return minerales.contains(mineral.toLowerCase());
 	}
 
 }

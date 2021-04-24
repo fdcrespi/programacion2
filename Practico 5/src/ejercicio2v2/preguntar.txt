@@ -1,0 +1,6 @@
+¿Esta bien que el alumno tenga una casa y la casa un arreglo de alumnos?
+
+¿Esta demas tener una clase de casa familiar solo para moficiar un metodo
+ó alcanza con tener un booleano?
+
+si es asi,  ver si esta bien el tiene familia.

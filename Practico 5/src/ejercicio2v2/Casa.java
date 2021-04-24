@@ -7,7 +7,7 @@ public class Casa {
 	private String nombre;
 	private int maximoEstudiantes;
 	private ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
-	private ArrayList<String> cualidades = new ArrayList<String>();
+	private ArrayList<String> cualidadesNecesarias = new ArrayList<String>();
 	
 	public Casa(String nombre, int maximoEstudiantes) {
 		this.nombre = nombre;
@@ -31,17 +31,13 @@ public class Casa {
 	}
 	
 	public void agregarCualidad(String cualidad) {
-		cualidades.add(cualidad);
+		cualidadesNecesarias.add(cualidad);
 	}
 	
 	public void eliminarCualidad(String cualidad) {
-		cualidades.remove(cualidad);
+		cualidadesNecesarias.remove(cualidad);
 	}
 		
-	public ArrayList<Alumno> getAlumnos() {
-		return alumnos;
-	}
-	
 	public boolean agregarAlumno(Alumno alumno) {
 		if (permiteAlumno(alumno)) {
 			alumnos.add(alumno);
@@ -51,7 +47,7 @@ public class Casa {
 	}
 	
 	protected boolean permiteAlumno(Alumno alumno) {
-		return (maximoEstudiantes < alumnos.size() && cualidades.containsAll(alumno.getCualidades()));
+		return (maximoEstudiantes < alumnos.size() && alumno.contieneCualidades(cualidadesNecesarias));
 	}
 	
 }

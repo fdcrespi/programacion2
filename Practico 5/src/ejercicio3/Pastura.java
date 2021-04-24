@@ -21,5 +21,8 @@ public class Pastura extends Cereal {
 		this.superficieMinima = superficieMinima;
 	}
 	
+	public boolean sirveParaLote(Lote lote) {
+		return ((superficieMinima > lote.getSuperficie()) && super.sirveParaLote(lote));
+	}
 	
 }
