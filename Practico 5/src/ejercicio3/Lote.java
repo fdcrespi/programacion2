@@ -29,38 +29,32 @@ public class Lote {
 	public void setSuperficie(double superficie) {
 		this.superficie = superficie;
 	}
-	
+
 	public void addMineral(String mineral) {
 		if (!(minerales.contains(mineral.toLowerCase()))) {
 			minerales.add(mineral);
 		}
 	}
-	
+
 	public void removeMineral(String mineral) {
 		minerales.remove(mineral.toLowerCase());
 	}
 
 	public boolean contieneMineral(String string) {
-		// TODO Auto-generated method stub
 		return minerales.contains(string.toLowerCase());
 	}
 
 	public boolean sirveParaCereal(Cereal cereal) {
-		// TODO Auto-generated method stub
 		for (int i = 0; i < minerales.size(); i++) {
-			if(!(cereal.contieneMineral(minerales.get(i)))) {
+			if (!(cereal.contieneMineral(minerales.get(i)))) {
 				return false;
 			}
-			
 		}
 		return true;
 	}
 
 	public boolean esEspecial(ArrayList<String> mineralesPrimarios) {
-		// TODO Auto-generated method stub
 		return minerales.containsAll(mineralesPrimarios);
 	}
-	
-	
 
 }
