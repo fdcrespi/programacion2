@@ -1,0 +1,1 @@
+Es necesaria la clase simple y que contribuyente sea abstracto?
