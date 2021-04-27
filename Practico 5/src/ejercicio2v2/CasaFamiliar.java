@@ -6,12 +6,8 @@ public class CasaFamiliar extends Casa{
 		super(nombre, maximoEstudiantes);
 	}
 	
-	public boolean agregarAlumno(Alumno alumno) {
-		return (tieneFamiliar(alumno) && super.agregarAlumno(alumno));
-	}
-	
-	private boolean tieneFamiliar(Alumno alumno) {
-		return alumno.familiarEnCasa(this);
+	public boolean permiteAlumno(Alumno alumno) {
+		return (alumno.familiarEnCasa(this) && super.permiteAlumno(alumno));
 	}
 	
 }

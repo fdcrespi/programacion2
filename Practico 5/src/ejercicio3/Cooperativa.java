@@ -54,18 +54,19 @@ public class Cooperativa {
 	public ArrayList<Lote> lotesParaCereal(Cereal cereal){
 		ArrayList<Lote> lotesOk = new ArrayList<Lote>();
 		for (int i = 0; i < this.lotes.size(); i++) {
-			if (lotes.get(i).sirveParaCereal(cereal)) {
+			if(cereal.sirveParaLote(lotes.get(i))) {
 				lotesOk.add(lotesOk.get(i));
-			}
-			
+			}		
 		}
 		return lotesOk;
 	}
 	
-	public String tipoLote(Lote lote) {
-		if (lote.esEspecial(mineralesPrimarios)) {
-			return "Especial";
+	public boolean esEspecial(Lote lote) {
+		for (int i = 0; i < mineralesPrimarios.size(); i++) {
+			if(lote.contieneMineral(mineralesPrimarios.get(i))) {
+				return true;
+			}
 		}
-		return "Comun";
+		return false;
 	}
 }

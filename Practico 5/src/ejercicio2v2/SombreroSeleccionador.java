@@ -2,7 +2,7 @@ package ejercicio2v2;
 
 public class SombreroSeleccionador {
 
-	public String casaAsignada(Alumno alumno, Casa casa) {
+	public String asignarCasa(Alumno alumno, Casa casa) {
 		if (casa.agregarAlumno(alumno)) {
 			return "Al alumno: " + alumno.getNombre() + "Se le asigno la casa: " + casa.getNombre();
 		} 

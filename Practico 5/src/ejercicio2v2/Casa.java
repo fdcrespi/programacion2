@@ -41,13 +41,18 @@ public class Casa {
 	public boolean agregarAlumno(Alumno alumno) {
 		if (permiteAlumno(alumno)) {
 			alumnos.add(alumno);
+			alumno.setHouse(this);
 			return true;
 		}
 		return false;
 	}
 	
 	protected boolean permiteAlumno(Alumno alumno) {
-		return (maximoEstudiantes < alumnos.size() && alumno.contieneCualidades(cualidadesNecesarias));
+		return (maximoEstudiantes < alumnos.size() && alumno.contieneCualidades(cualidadesNecesarias) && !alumno.tieneCasa());
+	}
+	
+	public boolean equals(Casa casa) {
+		return this.getNombre() == casa.getNombre();
 	}
 	
 }

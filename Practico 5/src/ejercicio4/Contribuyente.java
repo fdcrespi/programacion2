@@ -32,7 +32,7 @@ public class Contribuyente {
 		this.identificacionTributaria = identificacionTributaria;
 	}
 	
-	public double montoFijo() {
+	public double getImpuesto() {
 		return montoFijo;
 	}
 	

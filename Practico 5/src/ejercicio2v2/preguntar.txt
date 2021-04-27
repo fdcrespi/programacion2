@@ -4,3 +4,6 @@
 ó alcanza con tener un booleano?
 
 si es asi,  ver si esta bien el tiene familia.
+
+
+//asi quedo bien

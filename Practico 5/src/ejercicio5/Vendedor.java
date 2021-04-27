@@ -3,8 +3,9 @@ package ejercicio5;
 public class Vendedor extends Empleado {
 
 	private double porcVentas;
+	private double ventas;
 
-	public Vendedor(String nombre, String apellido, int dni, double sueldo, double porcVentas) {
+	public Vendedor(String nombre, String apellido, int dni, double sueldo, double ventas, double porcVentas) {
 		super(nombre, apellido, dni, sueldo);
 		this.porcVentas = porcVentas;
 	}
@@ -18,7 +19,7 @@ public class Vendedor extends Empleado {
 	}
 	
 	public double sueldo() {
-		return getSueldo() * (1 + porcVentas/100) ;
+		return super.sueldo() +  (ventas * porcVentas / 100) ;
 	}
 	
 	

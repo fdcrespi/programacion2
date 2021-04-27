@@ -44,17 +44,4 @@ public class Lote {
 		return minerales.contains(string.toLowerCase());
 	}
 
-	public boolean sirveParaCereal(Cereal cereal) {
-		for (int i = 0; i < minerales.size(); i++) {
-			if (!(cereal.contieneMineral(minerales.get(i)))) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	public boolean esEspecial(ArrayList<String> mineralesPrimarios) {
-		return minerales.containsAll(mineralesPrimarios);
-	}
-
 }

@@ -14,10 +14,6 @@ public class CasaEnemiga extends Casa{
 		enemigas.add(casa);
 	}
 	
-	public boolean agregarAlumno(Alumno alumno) {
-		return (esAdmitido(alumno) && super.agregarAlumno(alumno));
-	}
-	
 	private boolean esAdmitido(Alumno alumno) {
 		boolean esAdmitido = true;
 		int i = 0;
@@ -28,5 +24,9 @@ public class CasaEnemiga extends Casa{
 			i++;
 		}
 		return esAdmitido;
+	}
+	
+	public boolean permiteAlumno(Alumno alumno) {
+		return super.permiteAlumno(alumno) && esAdmitido(alumno);
 	}
 }
