@@ -29,15 +29,17 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public void addItem(Item item){
+    public void addItem(Item item) {
         alquileres.add(item);
     }
 
-    public boolean equals(Cliente cliente) {
+    @Override
+    public boolean equals(Object o) {
+        Cliente cliente = (Cliente) o;
         return this.getDni() == cliente.getDni();
     }
 
-    public String toString(){
+    public String toString() {
         return "Nombre: " + getNombre() + " DNI: " + getDni();
     }
 

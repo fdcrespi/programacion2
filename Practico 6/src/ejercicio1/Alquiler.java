@@ -9,7 +9,7 @@ public class Alquiler {
     public LocalDate fechaDesde;
     public LocalDate fechaHasta;
 
-    public Alquiler(Cliente cliente,Item item,LocalDate fechaDesde,LocalDate fechaHasta) {
+    public Alquiler(Cliente cliente, Item item, LocalDate fechaDesde, LocalDate fechaHasta) {
         this.cliente = cliente;
         this.item = item;
         this.fechaDesde = fechaDesde;

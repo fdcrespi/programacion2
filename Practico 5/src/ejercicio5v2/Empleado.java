@@ -5,13 +5,12 @@ public class Empleado {
 	private String nombre;
 	private String apellido;
 	private int dni;
-	private double sueldo;
+	private CalculoSueldo sueldo;
 
-	public Empleado(String nombre, String apellido, int dni, double sueldo) {
+	public Empleado(String nombre, String apellido, int dni) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
-		this.sueldo = sueldo;
 	}
 
 	public String getNombre() {
@@ -38,12 +37,8 @@ public class Empleado {
 		this.dni = dni;
 	}
 
-	public void setSueldo(double sueldo) {
-		this.sueldo = sueldo;
-	}
-	
-	public double sueldo() {
-		return sueldo;
+	public double getSueldo() {
+		return sueldo.getSueldo();
 	}
 
 }

@@ -28,5 +28,11 @@ public class EmpleadoConBono extends Empleado {
 		this.bono = bono;
 	}
 	
+	public double sueldo() {
+		if (cantVentas >= ventasMinimas) {
+			return super.sueldo() + bono;
+		}
+		return super.sueldo();
+	}
 	
 }

@@ -59,15 +59,17 @@ public class Vehiculo implements Item {
 
     @Override
     public boolean alquilar() {
-        if (aptoAlquiler()){
+        if (aptoAlquiler()) {
             setAlquilado(true);
             return true;
         }
         return false;
     }
 
-    public boolean equals(Vehiculo vehiculo){
-        return getPatente() == vehiculo.getPatente();
+    @Override
+    public boolean equals(Object o) {
+        Vehiculo vehiculo = (Vehiculo) o;
+        return getPatente().equals(vehiculo.getPatente());
     }
 
     @Override

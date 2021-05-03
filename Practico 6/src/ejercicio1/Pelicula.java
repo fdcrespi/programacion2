@@ -43,15 +43,17 @@ public class Pelicula implements Item {
 
     @Override
     public boolean alquilar() {
-        if(aptoAlquiler()){
+        if (aptoAlquiler()) {
             setCopiasDisponibles(copiasDisponibles--);
             return true;
         }
         return false;
     }
 
-    public boolean equals(Pelicula pelicula){
-        return getTitulo() == pelicula.getTitulo();
+    @Override
+    public boolean equals(Object o) {
+        Pelicula pelicula = (Pelicula) o;
+        return getTitulo().equals(pelicula.getTitulo());
     }
 
     @Override

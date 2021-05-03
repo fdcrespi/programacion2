@@ -36,7 +36,7 @@ public class Empresa {
 	public double gastosSueldos() {
 		double sueldos = 0;
 		for (int i = 0; i < empleados.size(); i++) {
-			sueldos += empleados.get(i).sueldo();
+			sueldos += empleados.get(i).getSueldo();
 		}
 		return sueldos;
 	}
