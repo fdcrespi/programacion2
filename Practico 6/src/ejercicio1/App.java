@@ -16,7 +16,7 @@ public class App {
         negocio.alquilar(cliente1, auto1, fechahasta);
         negocio.alquilar(cliente2, auto2, fechahasta);
         negocio.alquilar(cliente1, peli1, fechahasta);
-        negocio.imprimirAlquileres();
+        System.out.println(negocio.imprimirAlquileres());
         System.out.println(negocio.alquileresVencidos());
     }
 }

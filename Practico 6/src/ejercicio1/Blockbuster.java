@@ -43,7 +43,13 @@ public class Blockbuster {
         }
     }
 
-    public void imprimirAlquileres() {
-        System.out.println(alquileres);
+    public ArrayList<Alquiler> imprimirAlquileres() {
+        ArrayList<Alquiler> alqui = new ArrayList<Alquiler>();
+        for (Alquiler a : alquileres
+        ) {
+            alqui.add(a);
+        }
+        return alqui;
     }
+
 }
