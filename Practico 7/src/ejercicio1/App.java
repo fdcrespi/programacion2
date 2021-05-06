@@ -1,8 +1,5 @@
 package ejercicio1;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class App {
     public static void main(String[] args) {
         Diccionario diccionario = new Diccionario();
@@ -19,14 +16,10 @@ public class App {
         diccionario.agregarPalabra(palabra1);
         diccionario.agregarPalabra(palabra2);
         diccionario.agregarPalabra(palabra3);
-        ArrayList<Palabra> sinonimos = new ArrayList<>(palabra1.imprimirSinonimos());
-        System.out.println(sinonimos);
-        System.out.println("----- ordenada ------");
-        Collections.sort(sinonimos);
-        System.out.println(sinonimos);
-        System.out.println("----- reversa ------");
-        Collections.sort(sinonimos,Collections.reverseOrder());
-        System.out.println(sinonimos);
+        System.out.println("----- sinonimos ------");
+        System.out.println(palabra1.imprimirSinonimos());
+        System.out.println("----- antonimos ------");
+        System.out.println(palabra1.imprimirAntonimos());
         System.out.println(palabra1.imprimirDefiniciones());
         System.out.println(diccionario.palabrasEntre(palabra2, palabra1));
 

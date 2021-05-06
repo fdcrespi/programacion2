@@ -1,6 +1,7 @@
 package ejercicio1;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Objects;
 
@@ -47,12 +48,13 @@ public class Palabra implements Comparable<Palabra>{
         return listado(sinonimos);
     }
 
-    public ArrayList<Palabra> listado(ArrayList<Palabra> lista){
+    private ArrayList<Palabra> listado(ArrayList<Palabra> lista){
         ArrayList<Palabra> listadoPalabras = new ArrayList<Palabra>();
         for (Palabra p: lista
              ) {
             listadoPalabras.add(p);
         }
+        Collections.sort(listadoPalabras);
         return listadoPalabras;
     }
 
@@ -95,4 +97,5 @@ public class Palabra implements Comparable<Palabra>{
         }
         return definicionesPalabra;
     }
+    
 }
