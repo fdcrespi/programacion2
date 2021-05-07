@@ -12,6 +12,10 @@ public class Palabra implements Comparable<Palabra>{
     private ArrayList<Palabra> sinonimos;
     private ArrayList<Palabra> antonimos;
 
+    public Palabra(String escritura){
+        this.escritura = escritura;
+    }
+
     public Palabra(String escritura, String funcionGramatica) {
         this.escritura = escritura;
         this.funcionGramatica = funcionGramatica;
