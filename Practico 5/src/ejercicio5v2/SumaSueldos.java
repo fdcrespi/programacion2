@@ -1,6 +1,6 @@
 package ejercicio5v2;
 
-public class SumaSueldos {
+public class SumaSueldos extends CalculoSueldo {
 
 	private CalculoSueldo sueldo1;
 	private CalculoSueldo sueldo2;

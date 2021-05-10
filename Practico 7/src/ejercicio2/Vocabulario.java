@@ -25,7 +25,7 @@ public class Vocabulario {
         for (String t: texto.split("\\s+|\n|, ")) {
             Palabra newpal = new Palabra(t.toLowerCase());
             if (arregloPalabras.contains(newpal)){
-                newpal.sumarFrecuencia();
+                arregloPalabras.get(arregloPalabras.indexOf(newpal)).sumarFrecuencia();
             } else {
                 arregloPalabras.add(newpal);
             }
@@ -34,14 +34,35 @@ public class Vocabulario {
     }
 
     public ArrayList<Palabra> palabrasOrdenadas(){
-        Collections.sort(palabrasDiferentes);
-        return palabrasDiferentes;
+        ArrayList<Palabra> listaOrdenada = new ArrayList<Palabra>(palabrasDiferentes);
+        Collections.sort(listaOrdenada);
+        return listaOrdenada;
     }
-
+/*
+    public ArrayList<Palabra> palabrasMasFrecuentes(){
+        ArrayList<Palabra> listaFrecuentes = new ArrayList<Palabra>();
+        ArrayList<Palabra> ordenadaFrecuencia = new ArrayList<Palabra>(ordenFrecuencia());
+        if (ordenadaFrecuencia.size() == 0) return listaFrecuentes;
+        int frecuenciaMayor = ordenadaFrecuencia.get(0).getFrecuencia();
+        //TODO falta recorrer y agregar a listaFrecuentes
+    }
+*/
     public ArrayList<Palabra> ordenFrecuencia(){
         ComparadorFrecuencia compF = new ComparadorFrecuencia();
-        Collections.sort(palabrasDiferentes, compF);
-        return palabrasDiferentes;
+        ArrayList<Palabra> listaFrecuencia = new ArrayList<Palabra>(palabrasDiferentes);
+        Collections.sort(listaFrecuencia, compF);
+        return listaFrecuencia;
+    }
+
+    public int cantidadVeces(String palabra){
+        Palabra pal = new Palabra(palabra.toLowerCase());
+        if (palabrasDiferentes.contains(pal))
+            return palabrasDiferentes.get(palabrasDiferentes.indexOf(pal)).getFrecuencia();
+        return 0;
+    }
+
+    public int cantidadPalabras(){
+        return palabrasDiferentes.size();
     }
 
 

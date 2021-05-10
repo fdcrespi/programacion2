@@ -8,7 +8,7 @@ public class Palabra implements Comparable<Palabra> {
 
     public Palabra(String escritura) {
         this.escritura = escritura;
-        frecuencia = 0;
+        frecuencia = 1;
     }
 
     public String getEscritura() {
@@ -28,12 +28,12 @@ public class Palabra implements Comparable<Palabra> {
     }
 
     public void sumarFrecuencia(){
-        frecuencia++;
+        frecuencia += 1;
     }
 
     @Override
     public String toString() {
-        return "escritura=" + escritura;
+        return "escritura=" + escritura + " frecuencia=" + frecuencia;
     }
 
     @Override
