@@ -1,0 +1,3 @@
+Si es necesario hacer el mayor y menor, e igual. o con solo dos y comprobas, etc....
+
+Si existe alguna posibilidad de no pasar un parametro en java
