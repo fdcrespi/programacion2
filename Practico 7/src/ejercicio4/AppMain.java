@@ -1,5 +1,8 @@
 package ejercicio4;
 
+import ejercicio4.condicion.CondicionTituloContiene;
+import ejercicio4.condicion.CondicionTituloIgual;
+
 public class AppMain {
     public static void main(String[] args) {
         Historiador pedro = new Historiador("Pedro");
@@ -12,12 +15,12 @@ public class AppMain {
         pedro.addDocumentos(doc1);
         pedro.addDocumentos(doc2);
         pedro.addDocumentos(doc3);
-        System.out.println(pedro.documentosConTitulo("documento1"));
-        System.out.println(pedro.documentosTituloConPalabra("documento"));
-        System.out.println(pedro.documentosConPalabraClave("docu"));
-        System.out.println(pedro.documentosSinPalabraClave());
-        System.out.println(pedro.documentosContenidoConPalabra("tiene"));
-        System.out.println(pedro.documentosContenidoMasPalabras());
 
+        CondicionTituloIgual titulo = new CondicionTituloIgual("documento1");
+        System.out.println(pedro.documentosCumplen(titulo));
+        System.out.println("-------------------------");
+        CondicionTituloContiene contTitulo = new CondicionTituloContiene("mento");
+        System.out.println(pedro.documentosCumplen(contTitulo));
+        System.out.println("-------------------------");
     }
 }

@@ -37,8 +37,12 @@ public class Documento{
 
     @Override
     public boolean equals(Object o) {
-        Documento documento = (Documento) o;
-        return getTitulo().equals(documento.getTitulo());
+        try {
+            Documento documento = (Documento) o;
+            return getTitulo().equals(documento.getTitulo());
+        } catch (Exception e){
+            return false;
+        }
     }
 
     public void addPalabraClave(String palabra){
