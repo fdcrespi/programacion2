@@ -26,9 +26,8 @@ public class Vivero {
         return plantasCumplen;
     }
 
-    public ArrayList<Planta> buscarPlantasOrdenadas(Condicion c, Comparator comparador){
-        ArrayList<Planta> plantasCumplen = new ArrayList<Planta>();
-        plantasCumplen = buscarPlantas(c);
+    public ArrayList<Planta> buscarPlantas(Condicion c, Comparator<Planta> comparador){
+        ArrayList<Planta> plantasCumplen = buscarPlantas(c);
         Collections.sort(plantasCumplen, comparador);
         return plantasCumplen;
     }
@@ -73,6 +72,6 @@ public class Vivero {
         System.out.println("-------------- ORDEN ----------------");
         CondicionNombreCientificoIncluye cientIncluye = new CondicionNombreCientificoIncluye("e");
         System.out.println(vivero.buscarPlantas(cientIncluye));
-        System.out.println(vivero.buscarPlantasOrdenadas(cientIncluye, new ComparadorVarios(new ComparadorRiego(), new ComparadorVarios(new ComparadorSol(), new ComparadorNombre()))));
+        System.out.println(vivero.buscarPlantas(cientIncluye, new ComparadorVarios(new ComparadorRiego(), new ComparadorVarios(new ComparadorSol(), new ComparadorNombre()))));
     }
 }

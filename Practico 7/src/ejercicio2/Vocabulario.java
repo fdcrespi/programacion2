@@ -4,7 +4,6 @@ import ejercicio2.comparador.ComparadorFrecuencia;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Locale;
 
 public class Vocabulario {
     private String texto;

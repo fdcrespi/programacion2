@@ -1,7 +1,5 @@
 package adicional;
 
-import java.util.Objects;
-
 public class Producto {
     private String nombre;
     private String autor;

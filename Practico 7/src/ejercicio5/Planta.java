@@ -78,7 +78,7 @@ public class Planta{
     }
 
     public void setSol(int sol) {
-        this.sol = sol;
+        this.sol = comprobarRequerimiento(sol);
     }
 
     public int getRiego() {
@@ -86,7 +86,7 @@ public class Planta{
     }
 
     public void setRiego(int riego) {
-        this.riego = riego;
+        this.riego = comprobarRequerimiento(riego);
     }
 
     public void addNombreVulgar(String nombre){
@@ -95,8 +95,12 @@ public class Planta{
 
     @Override
     public boolean equals(Object o) {
-        Planta planta = (Planta) o;
-        return getNombreCientifico().equals(planta.getNombreCientifico());
+        try {
+            Planta planta = (Planta) o;
+            return getNombreCientifico().equals(planta.getNombreCientifico());
+        } catch (Exception e){
+            return false;
+        }
     }
 
     @Override

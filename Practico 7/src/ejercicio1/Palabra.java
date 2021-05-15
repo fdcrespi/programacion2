@@ -1,9 +1,7 @@
 package ejercicio1;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Objects;
 
 public class Palabra implements Comparable<Palabra>{
     private String escritura;

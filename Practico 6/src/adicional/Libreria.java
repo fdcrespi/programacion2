@@ -1,7 +1,6 @@
 package adicional;
 
 import adicional.condiciones.Condicion;
-import adicional.condiciones.CondicionAutor;
 
 import java.util.ArrayList;
 

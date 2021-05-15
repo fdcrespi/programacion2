@@ -1,10 +1,6 @@
 package ejercicio4;
 
-import ejercicio2.Palabra;
-
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Objects;
 
 public class Documento{
     private String titulo;
@@ -37,8 +33,12 @@ public class Documento{
 
     @Override
     public boolean equals(Object o) {
-        Documento documento = (Documento) o;
-        return getTitulo().equals(documento.getTitulo());
+        try {
+            Documento documento = (Documento) o;
+            return getTitulo().equals(documento.getTitulo());
+        } catch (Exception e){
+            return false;
+        }
     }
 
     public void addPalabraClave(String palabra){

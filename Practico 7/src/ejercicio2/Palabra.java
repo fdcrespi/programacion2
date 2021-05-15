@@ -1,7 +1,5 @@
 package ejercicio2;
 
-import java.util.Objects;
-
 public class Palabra implements Comparable<Palabra> {
     public String escritura;
     public int frecuencia;
