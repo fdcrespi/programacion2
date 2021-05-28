@@ -2,8 +2,6 @@ package criterio;
 
 import app.Comercio;
 
-import java.util.Locale;
-
 public class CriterioImplementaProtocolo implements Criterio{
     private String protocolo;
 

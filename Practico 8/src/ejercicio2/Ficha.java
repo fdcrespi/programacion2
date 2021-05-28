@@ -28,7 +28,7 @@ public class Ficha {
         return poderDestruccion;
     }
 
-    protected void setPoderDestruccin(int poder){
+    protected void setPoderDestruccion(int poder){
         poderDestruccion = poder;
     }
 

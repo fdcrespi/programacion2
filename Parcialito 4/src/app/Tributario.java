@@ -1,7 +1,6 @@
 package app;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public abstract class Tributario {
     private String nombre;

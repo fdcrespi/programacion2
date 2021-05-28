@@ -4,8 +4,9 @@ public class FichaEspecial extends Ficha{
 
     public FichaEspecial(int fortaleza, int cantidadCasilleros) {
         super(fortaleza, cantidadCasilleros);
-        setPoderDestruccin(fortaleza/cantidadCasilleros);
+        if (cantidadCasilleros != 0) {
+            setPoderDestruccion(fortaleza / cantidadCasilleros);
+        } else setPoderDestruccion(1);
     }
-
 
 }

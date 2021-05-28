@@ -2,8 +2,6 @@ package criterio;
 
 import app.Comercio;
 
-import java.util.Locale;
-
 public class CriterioRubro implements Criterio{
     private String rubro;
 

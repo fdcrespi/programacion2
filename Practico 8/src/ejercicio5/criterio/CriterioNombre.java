@@ -1,6 +1,6 @@
-package criterio;
+package ejercicio5.criterio;
 
-import app.Comercio;
+import ejercicio5.ElementoFS;
 
 public class CriterioNombre implements Criterio{
     private String nombre;
@@ -10,7 +10,7 @@ public class CriterioNombre implements Criterio{
     }
 
     @Override
-    public boolean cumple(Comercio c) {
-        return c.getNombre().toLowerCase().equals(nombre.toLowerCase());
+    public boolean cumple(ElementoFS elemento) {
+        return elemento.getNombre().contains(nombre);
     }
 }
