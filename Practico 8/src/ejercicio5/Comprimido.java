@@ -1,12 +1,14 @@
 package ejercicio5;
 
-public class Comprimido extends ElementoFS{
+import ejercicio5.criterio.Criterio;
+
+import java.util.ArrayList;
+
+public class Comprimido extends Directorio{
     private double factor;
-    private ElementoFS comprimido;
 
     public Comprimido(String nombre, ElementoFS comprimido, double factor) {
         super(nombre);
-        this.comprimido = comprimido;
         if (!(factor > 0))
             this.factor = 0;
         else
@@ -15,6 +17,22 @@ public class Comprimido extends ElementoFS{
 
     @Override
     public double getTamanio() {
-        return comprimido.getTamanio()/factor;
+        return super.getTamanio()/factor;
+    }
+
+    @Override
+    public ArrayList<ElementoFS> buscar(Criterio criterio) {
+        ArrayList<ElementoFS> elementosCumplen = new ArrayList<>();
+        if (criterio.cumple(this)) {
+            elementosCumplen.add(this);
+            return elementosCumplen;
+        }
+        for (ElementoFS e: elementos) {
+            if(!e.buscar(criterio).isEmpty()){
+                elementosCumplen.add(this);
+                return elementosCumplen;
+            }
+        }
+        return elementosCumplen;
     }
 }

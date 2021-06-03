@@ -44,6 +44,7 @@ public class Club {
         Socio socio2 = new Socio("Juan Roman", "Riquelme", 30);
         Socio socio3 = new Socio("Carlos", "Tevez", 17);
         Socio socio4 = new Socio("Carlos", "Almendra", 16);
+        Socio socio5 = new Socio("Alberto", "Pepe", 28);
         Alquiler alq1 = new Alquiler(LocalDate.now(), 1, 501);
         Alquiler alq2 = new Alquiler(LocalDate.now(), 2, 800);
         Alquiler alq3 = new Alquiler(LocalDate.now(), 3, 600);
@@ -56,10 +57,12 @@ public class Club {
         socio2.addAlquiler(alq3);
         socio3.addAlquiler(alq4);
         socio3.addAlquiler(alq5);
+        socio5.addAlquiler(alq6);
         BocaJrs.addSocio(socio1);
         BocaJrs.addSocio(socio2);
         BocaJrs.addSocio(socio3);
         BocaJrs.addSocio(socio4);
+        BocaJrs.addSocio(socio5);
 
         /*CriterioCuotaImpaga c1 = new CriterioCuotaImpaga();*/
         ComparadorNombre compNombre = new ComparadorNombre();
@@ -77,12 +80,14 @@ public class Club {
 
         socio2.setAldia(false);
         socio3.setAldia(false);
-        CriterioCuotaMayorA c4 = new CriterioCuotaMayorA(500);
-        ComparadorMoroso cm = new ComparadorMoroso();
-        ComparadorAnd cuotaPaga = new ComparadorAnd(cm, compNombApe);
-        ComparadorNot ci = new ComparadorNot(cm);
-        ComparadorAnd cuotaImp = new ComparadorAnd(ci, compNombApe);
-        ComparadorAnd cuotas = new ComparadorAnd(cuotaPaga, cuotaImp);
+        socio5.setAldia(false);
+        CriterioCuotaMayorA c4 = new CriterioCuotaMayorA(500); //Criterio para quedarme con los mas de 500
+        /*ComparadorMoroso cm = new ComparadorMoroso(); //Ordenar por si es moroso o no
+        ComparadorAnd cuotaImp = new ComparadorAnd(cm, compNombApe); //Ordeno los que tienen la cuota paga por nombre
+        ComparadorNot ci = new ComparadorNot(cm); //Ordenar si la cuota es
+        ComparadorAnd cuotaPaga = new ComparadorAnd(ci, compNombApe); // Ordeno los que tienen la cuota impaga por nombre
+        ComparadorAnd cuotas = new ComparadorAnd(cuotaPaga, cuotaImp); //Ordeno por cuota paga e impaga*/
+        ComparadorAnd cuotas = new ComparadorAnd(new ComparadorMoroso(), new ComparadorNombre());
         System.out.println(BocaJrs.buscar(c4, cuotas));
 
     }

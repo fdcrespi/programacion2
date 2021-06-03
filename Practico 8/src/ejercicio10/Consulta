@@ -1,0 +1,5 @@
+1- ¿Estan bien implementados los recursos? Ya que utilizo un "asignado" en ambos por mas que en el compartido no,
+    pero necesito de alguna manera peguntar por ese estado en tareaTerminal.
+2- ¿Esta bien asumir que ambas tareas tienen estado ?
+3- En TareaCompuesta si esta bien el getRecursos, ya que le pide a la tarea sus recursos y los recorre
+4- ¿esta bien? El Dada una tarea, obtener los recursos. Ya que le pide el arreglo a las simples (aunque es una copia), utiliza el getRecurso();

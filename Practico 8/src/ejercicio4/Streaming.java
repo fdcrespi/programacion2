@@ -6,10 +6,17 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Streaming {
-    ArrayList<Pelicula> peliculas;
+    private ArrayList<Pelicula> peliculas;
+    private Criterio criterioRentable;
 
     public Streaming() {
         peliculas = new ArrayList<>();
+    }
+
+    public boolean esRentable(Pelicula pelicula){
+        if (criterioRentable != null)
+            return criterioRentable.cumple(pelicula);
+        return true;
     }
 
     public void addPelicula(Pelicula peli){
@@ -60,7 +67,6 @@ public class Streaming {
         CriterioAnd criterioAnd = new CriterioAnd(estrenoMenor, tiempoMenor);
         System.out.println(plataforma.getPeliculas(criterioAnd));
 
-        peli1.esRentable(new CriterioAnd(new TiempoMenor(LocalTime.of(0,45)), new GeneroIgual("infantil")));
 
     }
 }

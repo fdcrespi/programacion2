@@ -1,7 +1,6 @@
 package ejercicio3;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Socio {
     private String nombre;

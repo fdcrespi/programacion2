@@ -3,7 +3,7 @@ package ejercicio5.criterio;
 import ejercicio5.ElementoFS;
 
 public class CriterioNombre implements Criterio{
-    private String nombre;
+    private final String nombre;
 
     public CriterioNombre(String nombre) {
         this.nombre = nombre;
