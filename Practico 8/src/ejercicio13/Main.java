@@ -1,24 +1,29 @@
 package ejercicio13;
 
-import ejercicio13.criterioEstacion.PromedioLluviasMayor;
-import ejercicio13.criterioEstacion.UltimaTemperaturaMayor;
+import ejercicio13.criterioEstacion.CriterioAnd;
+import ejercicio13.criterioEstacion.CriterioNombre;
+import ejercicio13.criterioEstacion.PromedioRegistroMayor;
+import ejercicio13.criterioEstacion.UltimaRegistroMayor;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Estacion tandil = new Estacion("tandil", new PromedioLluviasMayor(2, 54));
-        Estacion tresa = new Estacion("Tres Arroyos", new UltimaTemperaturaMayor(20));
-        Sensor sensorTresa = new Sensor(25,48,20);
+        PromedioRegistroMayor promMayor = new PromedioRegistroMayor(54,2);
+        CriterioNombre nombre = new CriterioNombre("humedad");
+        CriterioAnd criterioTandil = new CriterioAnd(promMayor, nombre);
+        Estacion tandil = new Estacion("tandil", criterioTandil);
+        Sensor humedadTandil = new Sensor("humedad");
+        humedadTandil.addRegistro(new Registro(62));
+        humedadTandil.addRegistro(new Registro(55));
+        tandil.addSensor(humedadTandil);
+
+
+        Estacion tresa = new Estacion("Tres Arroyos", new UltimaRegistroMayor(20));
+        Sensor sensorTresa = new Sensor("humedad");
         tresa.addSensor(sensorTresa);
 
-        Lluvia tandil1 = new Lluvia(60);
-        Lluvia tandil2 = new Lluvia(55);
-        Lluvia tandil3 = new Lluvia(30);
-
-        tandil.addLluvia(tandil3);
-        tandil.addLluvia(tandil1);
-        tandil.addLluvia(tandil2);
-
-        System.out.println(tresa.llovera());
+        //System.out.println(tresa.llovera());
         System.out.println(tandil.llovera());
     }
 }

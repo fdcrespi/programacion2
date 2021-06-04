@@ -1,7 +1,7 @@
 package ejercicio13.criterioEstacion;
 
-import ejercicio13.Estacion;
+import ejercicio13.Sensor;
 
 public interface CriterioEstacion {
-    boolean cumple (Estacion e);
+    boolean cumple (Sensor s);
 }

@@ -1,53 +1,50 @@
 package ejercicio13;
 
-import java.time.LocalTime;
-import java.util.Objects;
+import java.util.ArrayList;
 
 public class Sensor {
-    private LocalTime hora;
-    private double temperatura;
-    private double humedad;
-    private double viento;
+    private ArrayList<Registro> registros;
+    private String nombre;
 
-    public Sensor(double temperatura, double humedad, double viento) {
-        this.temperatura = temperatura;
-        this.humedad = humedad;
-        this.viento = viento;
-        hora = LocalTime.now();
+    public Sensor(String nombre) {
+        this.nombre = nombre;
+        registros = new ArrayList<>();
     }
 
-    public double getTemperatura() {
-        return temperatura;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTemperatura(double temperatura) {
-        this.temperatura = temperatura;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public double getHumedad() {
-        return humedad;
+    public void addRegistro(Registro reg){
+        if(!registros.contains(reg)){
+            registros.add(reg);
+        }
     }
 
-    public void setHumedad(double humedad) {
-        this.humedad = humedad;
+    public double promediosUltimosNRegistros(int cantidadRegistros){
+        if (cantidadRegistros <= 0 || registros.size() < cantidadRegistros){
+            return 0;
+        }
+        int suma = 0;
+        for (int i = registros.size() - 1; i >= registros.size() - cantidadRegistros; i--) {
+            suma += registros.get(i).getValor();
+        }
+        return suma / registros.size();
     }
 
-    public double getViento() {
-        return viento;
-    }
-
-    public void setViento(double viento) {
-        this.viento = viento;
-    }
-
-    public LocalTime getHora() {
-        return hora;
+    public double ultimoRegistro(){
+        if(registros.isEmpty()) return 0;
+        return registros.get(registros.size()).getValor();
     }
 
     @Override
     public boolean equals(Object o) {
         Sensor sensor = (Sensor) o;
-        return getHora().equals(sensor.getHora());
+        return getNombre().equals(sensor.getNombre());
     }
 
 }

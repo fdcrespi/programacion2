@@ -1,6 +1,7 @@
 package ejercicio13.criterioEstacion;
 
 import ejercicio13.Estacion;
+import ejercicio13.Sensor;
 
 public class CriterioNot implements CriterioEstacion{
     CriterioEstacion criterio;
@@ -10,7 +11,7 @@ public class CriterioNot implements CriterioEstacion{
     }
 
     @Override
-    public boolean cumple(Estacion e) {
-        return !criterio.cumple(e);
+    public boolean cumple(Sensor s) {
+        return !criterio.cumple(s);
     }
 }
